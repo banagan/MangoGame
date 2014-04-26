@@ -1,4 +1,4 @@
 MangoGame
 =========
 
-MangoGame is a virtual lan battle platform
+芒果对战平台是一个采用虚拟网卡技术的游戏对战平台.
