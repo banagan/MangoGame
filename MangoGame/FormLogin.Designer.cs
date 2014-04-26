@@ -37,7 +37,6 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.lblRegister = new System.Windows.Forms.Label();
             this.chkPassword = new System.Windows.Forms.CheckBox();
-            this.chkFirewall = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // lblServerList
@@ -117,29 +116,18 @@
             this.chkPassword.AutoSize = true;
             this.chkPassword.Checked = true;
             this.chkPassword.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkPassword.Location = new System.Drawing.Point(375, 180);
+            this.chkPassword.Location = new System.Drawing.Point(375, 141);
             this.chkPassword.Name = "chkPassword";
             this.chkPassword.Size = new System.Drawing.Size(72, 16);
             this.chkPassword.TabIndex = 8;
             this.chkPassword.Text = "记住密码";
             this.chkPassword.UseVisualStyleBackColor = true;
             // 
-            // chkFirewall
-            // 
-            this.chkFirewall.AutoSize = true;
-            this.chkFirewall.Location = new System.Drawing.Point(375, 216);
-            this.chkFirewall.Name = "chkFirewall";
-            this.chkFirewall.Size = new System.Drawing.Size(84, 16);
-            this.chkFirewall.TabIndex = 9;
-            this.chkFirewall.Text = "关闭防火墙";
-            this.chkFirewall.UseVisualStyleBackColor = true;
-            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(512, 257);
-            this.Controls.Add(this.chkFirewall);
             this.Controls.Add(this.chkPassword);
             this.Controls.Add(this.lblRegister);
             this.Controls.Add(this.btnLogin);
@@ -167,7 +155,6 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label lblRegister;
         private System.Windows.Forms.CheckBox chkPassword;
-        private System.Windows.Forms.CheckBox chkFirewall;
     }
 }
 

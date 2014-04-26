@@ -20,12 +20,6 @@ namespace MangoGame
             {
                 rememberPassword();
             }
-            
-            // 如果勾选"关闭防火墙"
-            if(chkFirewall.Checked)
-            {
-                disableFirewall();
-            }
 
             // 启用ICMP协议，运行用户互相PING。
             enableICMP();
@@ -37,8 +31,8 @@ namespace MangoGame
             
         }
 
-        // 禁用系统自带防火墙
-        private void disableFirewall()
+        // 添加防火墙例外
+        private void addFirewallException()
         {
             
         }
