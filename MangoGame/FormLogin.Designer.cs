@@ -34,10 +34,10 @@
             this.cboServerList = new System.Windows.Forms.ComboBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.lbl = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.lblRegister = new System.Windows.Forms.Label();
+            this.chkPassword = new System.Windows.Forms.CheckBox();
+            this.chkFirewall = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // lblServerList
@@ -89,53 +89,54 @@
             this.txtPassword.Size = new System.Drawing.Size(192, 21);
             this.txtPassword.TabIndex = 5;
             // 
-            // button1
+            // btnLogin
             // 
-            this.button1.Location = new System.Drawing.Point(200, 197);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnLogin.Location = new System.Drawing.Point(200, 197);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(75, 23);
+            this.btnLogin.TabIndex = 6;
+            this.btnLogin.Text = "登陆";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // lbl
+            // lblRegister
             // 
-            this.lbl.AutoSize = true;
-            this.lbl.Location = new System.Drawing.Point(373, 95);
-            this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(41, 12);
-            this.lbl.TabIndex = 7;
-            this.lbl.Text = "label4";
+            this.lblRegister.AutoSize = true;
+            this.lblRegister.Location = new System.Drawing.Point(373, 95);
+            this.lblRegister.Name = "lblRegister";
+            this.lblRegister.Size = new System.Drawing.Size(53, 12);
+            this.lblRegister.TabIndex = 7;
+            this.lblRegister.Text = "注册账号";
             // 
-            // checkBox1
+            // chkPassword
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(375, 165);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(78, 16);
-            this.checkBox1.TabIndex = 8;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkPassword.AutoSize = true;
+            this.chkPassword.Location = new System.Drawing.Point(375, 165);
+            this.chkPassword.Name = "chkPassword";
+            this.chkPassword.Size = new System.Drawing.Size(72, 16);
+            this.chkPassword.TabIndex = 8;
+            this.chkPassword.Text = "记住密码";
+            this.chkPassword.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // chkFirewall
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(375, 201);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(78, 16);
-            this.checkBox2.TabIndex = 9;
-            this.checkBox2.Text = "checkBox2";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.chkFirewall.AutoSize = true;
+            this.chkFirewall.Location = new System.Drawing.Point(375, 201);
+            this.chkFirewall.Name = "chkFirewall";
+            this.chkFirewall.Size = new System.Drawing.Size(84, 16);
+            this.chkFirewall.TabIndex = 9;
+            this.chkFirewall.Text = "关闭防火墙";
+            this.chkFirewall.UseVisualStyleBackColor = true;
             // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(541, 257);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.lbl);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.chkFirewall);
+            this.Controls.Add(this.chkPassword);
+            this.Controls.Add(this.lblRegister);
+            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.cboServerList);
@@ -157,10 +158,10 @@
         private System.Windows.Forms.ComboBox cboServerList;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label lbl;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Label lblRegister;
+        private System.Windows.Forms.CheckBox chkPassword;
+        private System.Windows.Forms.CheckBox chkFirewall;
     }
 }
 

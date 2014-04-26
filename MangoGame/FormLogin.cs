@@ -15,5 +15,15 @@ namespace MangoGame
         {
             InitializeComponent();
         }
+
+        private void checkFirewall()
+        {
+            
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
