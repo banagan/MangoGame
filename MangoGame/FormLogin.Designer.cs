@@ -69,6 +69,7 @@
             // 
             // cboServerList
             // 
+            this.cboServerList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboServerList.FormattingEnabled = true;
             this.cboServerList.Location = new System.Drawing.Point(157, 49);
             this.cboServerList.Name = "cboServerList";
@@ -107,11 +108,16 @@
             this.lblRegister.Size = new System.Drawing.Size(53, 12);
             this.lblRegister.TabIndex = 7;
             this.lblRegister.Text = "注册账号";
+            this.lblRegister.Click += new System.EventHandler(this.lblRegister_Click);
+            this.lblRegister.MouseEnter += new System.EventHandler(this.lblRegister_MouseEnter);
+            this.lblRegister.MouseLeave += new System.EventHandler(this.lblRegister_MouseLeave);
             // 
             // chkPassword
             // 
             this.chkPassword.AutoSize = true;
-            this.chkPassword.Location = new System.Drawing.Point(375, 165);
+            this.chkPassword.Checked = true;
+            this.chkPassword.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkPassword.Location = new System.Drawing.Point(375, 180);
             this.chkPassword.Name = "chkPassword";
             this.chkPassword.Size = new System.Drawing.Size(72, 16);
             this.chkPassword.TabIndex = 8;
@@ -121,7 +127,7 @@
             // chkFirewall
             // 
             this.chkFirewall.AutoSize = true;
-            this.chkFirewall.Location = new System.Drawing.Point(375, 201);
+            this.chkFirewall.Location = new System.Drawing.Point(375, 216);
             this.chkFirewall.Name = "chkFirewall";
             this.chkFirewall.Size = new System.Drawing.Size(84, 16);
             this.chkFirewall.TabIndex = 9;
@@ -132,7 +138,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(541, 257);
+            this.ClientSize = new System.Drawing.Size(512, 257);
             this.Controls.Add(this.chkFirewall);
             this.Controls.Add(this.chkPassword);
             this.Controls.Add(this.lblRegister);

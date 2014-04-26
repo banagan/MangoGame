@@ -14,14 +14,61 @@ namespace MangoGame
         public FormLogin()
         {
             InitializeComponent();
+
+            // 如果勾选"记住密码"
+            if(chkPassword.Checked)
+            {
+                rememberPassword();
+            }
+            
+            // 如果勾选"关闭防火墙"
+            if(chkFirewall.Checked)
+            {
+                disableFirewall();
+            }
+
+            // 启用ICMP协议，运行用户互相PING。
+            enableICMP();
         }
 
-        private void checkFirewall()
+        // 记住密码
+        private void rememberPassword()
         {
             
         }
 
+        // 禁用系统自带防火墙
+        private void disableFirewall()
+        {
+            
+        }
+
+        // 启用ICMP协议
+        private void enableICMP()
+        {
+
+        }
+
+        // 登陆
         private void btnLogin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // 注册
+        private void lblRegister_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // 当鼠标进入注册标签区域
+        private void lblRegister_MouseEnter(object sender, EventArgs e)
+        {
+            
+        }
+
+        // 当鼠标离开注册标签区域
+        private void lblRegister_MouseLeave(object sender, EventArgs e)
         {
 
         }
