@@ -14,7 +14,7 @@ obj
 Obj
 # this is a Visual Studio user solution file, it contains your personal settings and should not be checked in 
 # if sharing the repo with other people, if it is just your repo you can remove this 
-*.suo
+#*.suo
 # this folder is created when using RIA Services with a Silverlight application, the code from one project 
 # is copied here, thus it shouldn’t be checked into source control 
 Generated_Code
