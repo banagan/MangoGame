@@ -14,7 +14,6 @@ namespace MangoGame
         public FormLogin()
         {
             InitializeComponent();
-            //
             // 如果勾选"记住密码"
             if(chkPassword.Checked)
             {
