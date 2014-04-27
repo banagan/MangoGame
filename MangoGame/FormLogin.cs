@@ -12,6 +12,7 @@ namespace MangoGame
 {
     public partial class FormLogin : Form
     {
+
         public FormLogin()
         {
             InitializeComponent();
@@ -71,7 +72,7 @@ namespace MangoGame
         // 登陆
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         // 注册
@@ -83,13 +84,13 @@ namespace MangoGame
         // 当鼠标进入注册标签区域
         private void lblRegister_MouseEnter(object sender, EventArgs e)
         {
-            
+
         }
 
         // 当鼠标离开注册标签区域
         private void lblRegister_MouseLeave(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

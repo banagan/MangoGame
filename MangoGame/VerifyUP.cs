@@ -27,20 +27,20 @@ namespace MangoGame
         }
 
         // 验证账号函数
-        private int VerUsername()
+        private int VerUsername(string username)
         {
             return 0;
         }
 
         // 验证密码函数
-        private int VerPassword()
+        private int VerPassword(string password)
         {
             return 0;
         }
 
         // 验证重复密码函数
-        // 0 = 验证成功; 1 = 
-        private int VerPasswordRepeat()
+        // 0 = 验证成功; 1 = 验证失败
+        private int VerPasswordRepeat(string password1, string password2)
         {
             return 0;
         }

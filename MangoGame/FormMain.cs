@@ -9,16 +9,11 @@ using System.Windows.Forms;
 
 namespace MangoGame
 {
-    public partial class FormRegister : Form
+    public partial class FormMain : Form
     {
-        public FormRegister()
+        public FormMain()
         {
             InitializeComponent();
-        }
-
-        private void btnRegister_Click(object sender, EventArgs e)
-        {
-            
         }
     }
 }
