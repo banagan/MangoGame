@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
 namespace MangoGame
@@ -53,99 +52,88 @@ namespace MangoGame
         }
 
         [DllImport("cvn_main.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
-        private static extern int CVN_getUDPc2cport();
+        public static extern int CVN_getUDPc2cport();
 
         [DllImport("cvn_main.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
-        private static extern int CVN_getTCPc2cport();
+        public static extern int CVN_getTCPc2cport();
 
         [DllImport("cvn_main.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
-        private static extern void CVN_Login(string cvnurl, string username, string password);
+        public static extern void CVN_Login(string cvnurl, string username, string password);
 
         [DllImport("cvn_main.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
-        private static extern void CVN_Message(DelegateGetCVNmessage Address);
+        public static extern void CVN_Message(DelegateGetCVNmessage Address);
 
         [DllImport("cvn_main.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
-        private static extern void CVN_InitClientServer(int tcpport, int udpport);
+        public static extern void CVN_InitClientServer(int tcpport, int udpport);
 
         [DllImport("cvn_main.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
-        private static extern void CVN_Logout();
+        public static extern void CVN_Logout();
 
         [DllImport("cvn_main.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
-        private static extern void CVN_ConnectUser(int Userid, string password);
+        public static extern void CVN_ConnectUser(int Userid, string password);
 
         [DllImport("cvn_main.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
-        private static extern void CVN_DisConnectUser(int Userid);
+        public static extern void CVN_DisConnectUser(int Userid);
 
         [DllImport("cvn_main.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
-        private static extern long CVN_CountSend();
+        public static extern long CVN_CountSend();
 
         [DllImport("cvn_main.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
-        private static extern long CVN_CountRecive();
+        public static extern long CVN_CountRecive();
 
         [DllImport("cvn_main.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
-        private static extern void CVN_FreeRes();
+        public static extern void CVN_FreeRes();
 
         [DllImport("cvn_main.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
-        private static extern bool CVN_InitEther();
+        public static extern bool CVN_InitEther();
 
         [DllImport("cvn_main.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
-        private static extern bool diduserinlist(int userid);//返回值一直是true？
+        public static extern bool diduserinlist(int userid);//返回值一直是true？
 
         [DllImport("cvn_main.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
-        private static extern string GetCVNIPByUserID(int userid);
+        public static extern string GetCVNIPByUserID(int userid);
 
         [DllImport("cvn_main.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
-        private static extern string CVN_GetOnlineUserinfo();
+        public static extern string CVN_GetOnlineUserinfo();
 
         [DllImport("cvn_main.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
-        private static extern string CVN_GetUserinfo();
+        public static extern string CVN_GetUserinfo();
 
         [DllImport("cvn_main.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
-        private static extern void CVN_ApplyForPeer(int peerid, string allpyinfo);
+        public static extern void CVN_ApplyForPeer(int peerid, string allpyinfo);
 
         [DllImport("cvn_main.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
-        private static extern void CVN_ApplyForJoinGroup(int groupid, string allpyinfo);
+        public static extern void CVN_ApplyForJoinGroup(int groupid, string allpyinfo);
 
         [DllImport("cvn_main.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
-        private static extern void CVN_ConfirmJoinPeer(int peerid);
+        public static extern void CVN_ConfirmJoinPeer(int peerid);
 
         [DllImport("cvn_main.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
-        private static extern void CVN_ConfirmJoinGroup(int userid, int groupid);
+        public static extern void CVN_ConfirmJoinGroup(int userid, int groupid);
 
         [DllImport("cvn_main.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
-        private static extern void CVN_RegistUser(string serverurl, string username, string password, string nick, string desc);
+        public static extern void CVN_RegistUser(string serverurl, string username, string password, string nick, string desc);
 
         [DllImport("cvn_main.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
-        private static extern void CVN_QuitGroup(int groupid);
+        public static extern void CVN_QuitGroup(int groupid);
 
         public delegate void DelegateGetCVNmessage(int messagetype, string messagestring);
-
-        public FormLogin FormLogin
-        {
-            get;
-            set;
-        }
-
-        public FormRegister FormRegister
-        {
-            get;
-            set;
-        }
-
-        public FormMain FormMain
-        {
-            get;
-            set;
-        }
-
-        private void GetCVNmessage(int messagetype, string messagestring)
+        
+        public void GetCVNmessage(int messagetype, string messagestring)
         {
             { string tmpstr = string.Empty; }
             List<string> strlist = new List<string>();
             
-
+            switch(messagetype)
+            {
+                case 2:
+                    break;
+                default:
+                    break;
+            }
             //字符串 += messagetype.ToString() + " :" + messagestring + "\r\n";
             
         }
+
     }
 }

@@ -14,6 +14,16 @@ namespace MangoGame
         public FormMain()
         {
             InitializeComponent();
+
+            Convnet convnet = new Convnet();
+            Convnet.DelegateGetCVNmessage dgcvn = new Convnet.DelegateGetCVNmessage(convnet.GetCVNmessage);
+            Convnet.CVN_Message(dgcvn);
+            Convnet.CVN_InitClientServer(600, 500);
+            Convnet.CVN_InitEther();
+            GC.KeepAlive(dgcvn);
+
+            FormLogin fm = new FormLogin();
+            fm.Show();
         }
     }
 }

@@ -12,7 +12,6 @@ namespace MangoGame
 {
     public partial class FormLogin : Form
     {
-
         public FormLogin()
         {
             InitializeComponent();
@@ -24,6 +23,8 @@ namespace MangoGame
 
             // 启用ICMP协议，运行用户互相PING。
             enableICMP();
+
+
         }
 
         // 记住密码
@@ -72,8 +73,63 @@ namespace MangoGame
         // 登陆
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            // 实例化本地验证verifyUP
+            VerifyUP verifyUP = new VerifyUP();
+
+            // 定义局部判断变量
+            int validUsername = 0;
+            int validPassword = 0;
+
+            // 定义局部账号变量
+            string username = txtUsername.Text;
+            string password = txtPassword.Text;
+
+            // 本地判断用户名
+            switch(verifyUP.VerUsername(username))
+            {
+                case 0:
+                    validUsername = 1;
+                    break;
+
+                case 1:
+                    MessageBox.Show("用户名包含非法字符");
+                    break;
+
+                case 2:
+                    MessageBox.Show("用户名长度不正确");
+                    break;
+
+                default:
+                    break;
+            }
+
+            // 本地判断密码
+            switch (verifyUP.VerPassword(password))
+            {
+                case 0:
+                    validPassword = 1;
+                    break;
+
+                case 1:
+                    MessageBox.Show("密码包含非法字符");
+                    break;
+
+                case 2:
+                    MessageBox.Show("密码长度不正确");
+                    break;
+
+                default:
+                    break;
+            }
+            
+            // 通过验证,进入登陆
+            if(validUsername == 1 && validPassword == 1)
+            {    
+                Convnet.CVN_Login("sh.convnet.net:23", username, password);
+            }
             
         }
+
 
         // 注册
         private void lblRegister_Click(object sender, EventArgs e)
@@ -92,5 +148,6 @@ namespace MangoGame
         {
             
         }
+
     }
 }

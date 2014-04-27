@@ -28,7 +28,7 @@ namespace MangoGame
         }
 
         // 验证账号函数
-        private int VerUsername(string username)
+        public int VerUsername(string username)
         {
             Regex usernameregex = new Regex("^[a-zA-Z0-9\u4e00-\u9fa5]+$");
             Match m = usernameregex.Match(username);
@@ -48,14 +48,14 @@ namespace MangoGame
         }
 
         // 验证密码函数
-        private int VerPassword(string password)
+        public int VerPassword(string password)
         {
             return 0;
         }
 
         // 验证重复密码函数
         // 0 = 验证成功; 1 = 验证失败
-        private int VerPasswordRepeat(string password1, string password2)
+        public int VerPasswordRepeat(string password1, string password2)
         {
             return 0;
         }
