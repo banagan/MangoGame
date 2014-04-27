@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace MangoGame
 {
@@ -29,7 +30,21 @@ namespace MangoGame
         // 验证账号函数
         private int VerUsername(string username)
         {
-            return 0;
+            Regex usernameregex = new Regex("^[a-zA-Z0-9\u4e00-\u9fa5]+$");
+            Match m = usernameregex.Match(username);
+            if (System.Text.Encoding.Default.GetBytes(username).Length > 10 || System.Text.Encoding.Default.GetBytes(username).Length <3)
+            {
+                return 2;
+            }
+            else if (m.Success)
+            {
+                return 0;
+            }
+            else 
+            {
+                return 1;
+            }
+                
         }
 
         // 验证密码函数

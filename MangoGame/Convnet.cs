@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace MangoGame
 {
-    class Convnet
+    unsafe class Convnet
     {
         struct TPeerGroupInfo
         {
