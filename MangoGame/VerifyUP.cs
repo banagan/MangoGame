@@ -50,14 +50,35 @@ namespace MangoGame
         // 验证密码函数
         private int VerPassword(string password)
         {
-            return 0;
+            Regex passwordregex = new Regex("^[a-zA-Z0-9]+$");
+            Match m = passwordregex.Match(password);
+            if (password.Length>10||password.Length<3)
+            {
+                return 2;
+            }
+            else if (m.Success)
+            {
+                return 0;
+            }
+            else
+            {
+                return 1;
+            }
         }
 
         // 验证重复密码函数
         // 0 = 验证成功; 1 = 验证失败
         private int VerPasswordRepeat(string password1, string password2)
         {
-            return 0;
+            if (password1 == password2)
+            {
+                return 0;
+            }
+            else
+            {
+                return 1;
+            }
+                
         }
     }
 }
