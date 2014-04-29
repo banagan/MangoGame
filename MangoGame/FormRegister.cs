@@ -16,6 +16,7 @@ namespace MangoGame
             InitializeComponent();
         }
 
+        // 注册按钮
         private void btnRegister_Click(object sender, EventArgs e)
         {
             

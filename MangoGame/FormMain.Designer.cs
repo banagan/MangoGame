@@ -77,6 +77,7 @@
             this.Controls.Add(this.listView2);
             this.Controls.Add(this.listView1);
             this.Name = "FormMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMain";
             this.ResumeLayout(false);
 
