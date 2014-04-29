@@ -125,7 +125,7 @@ namespace MangoGame
             // 通过验证,进入登陆
             if(validUsername == 1 && validPassword == 1)
             {    
-                Convnet.CVN_Login("sh.convnet.net:23", username, password);
+                FormMain.CVN_Login("sh.convnet.net:23", username, password);
             }
             
         }
