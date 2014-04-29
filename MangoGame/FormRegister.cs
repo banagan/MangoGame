@@ -72,7 +72,7 @@ namespace MangoGame
                     break;
             }
 
-            // 通过验证,进入登陆
+            // 通过验证,进入注册
             if (validUsername == 1 && validPassword == 1)
             {
                 FormMain.CVN_RegistUser("sh.convnet.net:23", username, password, username, "备注"); ;
