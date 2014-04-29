@@ -134,7 +134,8 @@ namespace MangoGame
         // 注册
         private void lblRegister_Click(object sender, EventArgs e)
         {
-
+            FormRegister formRegister = new FormRegister();
+            formRegister.ShowDialog();
         }
 
         // 当鼠标进入注册标签区域
@@ -147,6 +148,12 @@ namespace MangoGame
         private void lblRegister_MouseLeave(object sender, EventArgs e)
         {
             
+        }
+
+        // 关闭登陆窗口,退出程序
+        private void FormLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
 
     }

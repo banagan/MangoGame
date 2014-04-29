@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Threading;
 
 
 namespace MangoGame
 {
     public unsafe partial class FormMain : Form
     {
+        
         struct TPeerGroupInfo
         {
             int GroupID;
@@ -121,28 +123,69 @@ namespace MangoGame
 
         [DllImport("cvn_main.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
         public static extern void CVN_QuitGroup(int groupid);
+
+        FormLogin formLogin = new FormLogin();
+
         public delegate void DelegateGetCVNmessage(int messagetype, string messagestring);
         public void GetCVNmessage(int messagetype, string messagestring)
         {
-            { string tmpstr = string.Empty; }
-            List<string> strlist = new List<string>();
+            // messagetype 客户端状态消息
+            // 2 登陆失败
+            // 18 返回用户组信息
+            // 1000 与服务器断开连接
+            // 1002 peer用户连接成功
+            // 1003 peer用户连接成功
+            // 1004 peer用户连接断开
+            // 1005 退出登录end
+            // 1006 退出登录start
+            // 1007 peer用户重连尝试
+            // 1008 断线重连成功
+            // 1009 成功登陆
+            // 1010 网络类型确定
+            // 1011 网络检查开始
+            // 1012 网络检查结束
+            // 1111 网卡未安装
+            // 1113 其他消息
 
-            switch (messagetype)
+            switch(messagetype)
             {
+                // 如果登陆失败,则弹框通知
                 case 2:
+                    MessageBox.Show("登陆失败,用户名或密码错误");
+                    break;
+                // 登陆成功
+                case 1009:
+                    formLogin.Hide();
+                    break;
+                default:
+                    break;
+            }
+
+            switch(messagestring)
+            {
+                case "regist success":
+                    MessageBox.Show("注册成功!");
+
+                    break;
+                case "regist fail":
+                    MessageBox.Show("注册失败,用户名已存在.");
                     break;
                 default:
                     break;
             }
         }
+            
         public FormMain()
         {
             InitializeComponent();
             DelegateGetCVNmessage dgcvn = new DelegateGetCVNmessage(GetCVNmessage);
             CVN_Message(dgcvn);
-            CVN_InitClientServer(60, 50);
+            CVN_InitClientServer(53, 53);
             CVN_InitEther();
             GC.KeepAlive(dgcvn);
+
+            formLogin.ShowDialog();
         }
+
     }
 }

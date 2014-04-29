@@ -15,7 +15,8 @@ namespace MangoGame
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMain());
+            FormMain formMain = new FormMain();
+            Application.Run(formMain);
         }
     }
 }
