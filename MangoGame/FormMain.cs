@@ -121,9 +121,7 @@ namespace MangoGame
 
         [DllImport("cvn_main.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
         public static extern void CVN_QuitGroup(int groupid);
-
         public delegate void DelegateGetCVNmessage(int messagetype, string messagestring);
-
         public void GetCVNmessage(int messagetype, string messagestring)
         {
             { string tmpstr = string.Empty; }
