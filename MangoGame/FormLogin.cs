@@ -73,19 +73,21 @@ namespace MangoGame
         // 登陆
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            // 定义局部账号变量
+            string username = txtUsername.Text;
+            string password = txtPassword.Text;
+            
             // 实例化本地验证verifyUP
-            VerifyUP verifyUP = new VerifyUP();
+            VerifyUP verifyUP = new VerifyUP(username, password, password);
 
             // 定义局部判断变量
             int validUsername = 0;
             int validPassword = 0;
 
-            // 定义局部账号变量
-            string username = txtUsername.Text;
-            string password = txtPassword.Text;
+            
 
             // 本地判断用户名
-            switch(verifyUP.VerUsername(username))
+            switch(verifyUP.errorVerUsername)
             {
                 case 0:
                     validUsername = 1;
@@ -104,7 +106,7 @@ namespace MangoGame
             }
 
             // 本地判断密码
-            switch (verifyUP.VerPassword(password))
+            switch (verifyUP.errorVerPassword)
             {
                 case 0:
                     validPassword = 1;
