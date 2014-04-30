@@ -153,18 +153,19 @@ namespace MangoGame
                 case 2:
                     MessageBox.Show("登陆失败,用户名或密码错误");
                     break;
-
                 // 收到用户组信息
                 case 18:
                     List<List<string>> groupInfo;
-                    groupInfo = GetGroupInfo(messagestring);
-
+                    groupInfo = GetGroupInfo();
+                    
                     // 更新房间用户列表
                     UserListUpdate(groupInfo);
+
                     break;
 
                 // 登陆成功
                 case 1009:
+                    GetPersonalInfo(messagestring);
                     formLogin.Hide();
                     break;
 
@@ -220,14 +221,41 @@ namespace MangoGame
         private List<string> GetPersonalInfo(string messagestring)
         {
             List<string> listPersonalInfo = new List<string>();
+            string[] PersonalInfo = messagestring.Split(',');
+            listPersonalInfo.AddRange(PersonalInfo);
             return listPersonalInfo;
+            //listPersonalInfo[2]：用户虚拟IP；listPersonalInfo[3]:用户ID；listPersonalInfo[4]：用户昵称；listPersonalInfo[5]：用户登陆账号；
         }
 
         // 获取用户组信息,返回List
-        private List<List<string>> GetGroupInfo(string messagestring)
+        private List<List<string>> GetGroupInfo()
         {
             List<List<string>> listGroupInfo = new List<List<string>>();
-            return listGroupInfo;
+            List<string> infoList = new List<string>();
+            List<string> nameList = new List<string>();
+            List<string> idList = new List<string>();
+            string messageString = CVN_GetOnlineUserinfo();//获取在线用户信息，并赋值
+            string[] groupInfo = messageString.Split(',');
+            infoList.AddRange(groupInfo);
+            
+            int j;
+            for (int i = 1; i < groupInfo.Length; i++)
+            {
+                if (groupInfo[i] == "G")
+                {
+                    i = i + 4;
+
+                    for (j = 0; i < infoList.Count(); i = i + 3, j++)
+                    {
+                        nameList.Add(groupInfo[i]);
+                        idList.Add(groupInfo[i+1]);
+                    }
+                    listGroupInfo.Add(nameList);
+                    listGroupInfo.Add(idList);
+                    return listGroupInfo;
+                }
+            }
+            return null;
         }
     }
 }
