@@ -153,10 +153,21 @@ namespace MangoGame
                 case 2:
                     MessageBox.Show("登陆失败,用户名或密码错误");
                     break;
+
+                // 收到用户组信息
+                case 18:
+                    List<List<string>> groupInfo;
+                    groupInfo = GetGroupInfo(messagestring);
+
+                    // 更新房间用户列表
+                    UserListUpdate(groupInfo);
+                    break;
+
                 // 登陆成功
                 case 1009:
                     formLogin.Hide();
                     break;
+
                 default:
                     break;
             }
@@ -187,5 +198,36 @@ namespace MangoGame
             formLogin.ShowDialog();
         }
 
+        // 加入用户组,即加入房间
+        private void JoinGroup(int groupID, string groupPassword)
+        {
+            CVN_ApplyForJoinGroup(groupID, groupPassword);
+        }
+
+        // 加入用户组测试按钮
+        private void button1_Click(object sender, EventArgs e)
+        {
+            JoinGroup(2056, "8294809");
+        }
+
+        // 
+        private void UserListUpdate(List<List<string>> groupInfo)
+        {
+            
+        }
+
+        // 获取个人信息,返回List
+        private List<string> GetPersonalInfo(string messagestring)
+        {
+            List<string> listPersonalInfo = new List<string>();
+            return listPersonalInfo;
+        }
+
+        // 获取用户组信息,返回List
+        private List<List<string>> GetGroupInfo(string messagestring)
+        {
+            List<List<string>> listGroupInfo = new List<List<string>>();
+            return listGroupInfo;
+        }
     }
 }

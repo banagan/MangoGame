@@ -84,8 +84,6 @@ namespace MangoGame
             int validUsername = 0;
             int validPassword = 0;
 
-            
-
             // 本地判断用户名
             switch(verifyUP.errorVerUsername)
             {

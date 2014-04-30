@@ -28,27 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.listView2 = new System.Windows.Forms.ListView();
+            this.lvwGameList = new System.Windows.Forms.ListView();
+            this.lvwUserList = new System.Windows.Forms.ListView();
             this.listView3 = new System.Windows.Forms.ListView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // listView1
+            // lvwGameList
             // 
-            this.listView1.Location = new System.Drawing.Point(33, 24);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(96, 507);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.lvwGameList.Location = new System.Drawing.Point(33, 24);
+            this.lvwGameList.Name = "lvwGameList";
+            this.lvwGameList.Size = new System.Drawing.Size(96, 507);
+            this.lvwGameList.TabIndex = 0;
+            this.lvwGameList.UseCompatibleStateImageBehavior = false;
             // 
-            // listView2
+            // lvwUserList
             // 
-            this.listView2.Location = new System.Drawing.Point(636, 24);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(105, 507);
-            this.listView2.TabIndex = 1;
-            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.lvwUserList.Location = new System.Drawing.Point(636, 24);
+            this.lvwUserList.Name = "lvwUserList";
+            this.lvwUserList.Size = new System.Drawing.Size(124, 507);
+            this.lvwUserList.TabIndex = 1;
+            this.lvwUserList.UseCompatibleStateImageBehavior = false;
             // 
             // listView3
             // 
@@ -67,15 +68,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(33, 537);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "加入房间测试";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.listView3);
-            this.Controls.Add(this.listView2);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.lvwUserList);
+            this.Controls.Add(this.lvwGameList);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMain";
@@ -85,10 +97,11 @@
 
         #endregion
 
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ListView lvwGameList;
+        private System.Windows.Forms.ListView lvwUserList;
         private System.Windows.Forms.ListView listView3;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button1;
 
     }
 }
